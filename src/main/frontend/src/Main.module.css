@@ -1,0 +1,44 @@
+.ojmLogo {
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 150px;
+}
+
+.mainLogo {
+    width: 460px;
+    height: 460px;
+}
+
+.searchLocationBox {
+    position: relative;
+    width: 600px;
+    height: 60px;
+    border-radius: 100px;
+    background : linear-gradient(110deg ,#FF3333 30%, #FF7676 60%, #FFF500 90%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchInput {
+    border: none;
+    width: 584px;
+    height: 44px;
+    border-radius: 100px;
+    text-align: center;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.searchLogo {
+    position: absolute;
+    left : 5%;
+    cursor: pointer;
+}
