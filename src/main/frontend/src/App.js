@@ -1,7 +1,7 @@
 // import React, {useEffect, useState} from "react";
 import "./App.css";
 import Main from "./routes/Main";
-import {Route, Router} from "react-router-dom";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 import LocationPage from "./routes/LocationPage";
 
 function App() {
@@ -16,14 +16,12 @@ function App() {
 
   return (
     <div className="App">
-        <Router>
-            <Route path="/">
-                <Main />
-            </Route>
-            <Route path="/location">
-                <LocationPage/>
-            </Route>
-        </Router>
+        <BrowserRouter>
+            <Routes>
+                    <Route path="/" element={<Main/>}/>
+                    <Route path="/location" element={<LocationPage/>}/>
+            </Routes>
+        </BrowserRouter>
     </div>
   );
 }
