@@ -1,6 +1,8 @@
 // import React, {useEffect, useState} from "react";
 import "./App.css";
-import Main from "./Main";
+import Main from "./routes/Main";
+import {Route, Router} from "react-router-dom";
+import LocationPage from "./routes/LocationPage";
 
 function App() {
 
@@ -14,7 +16,14 @@ function App() {
 
   return (
     <div className="App">
-        <Main />
+        <Router>
+            <Route path="/">
+                <Main />
+            </Route>
+            <Route path="/location">
+                <LocationPage/>
+            </Route>
+        </Router>
     </div>
   );
 }
