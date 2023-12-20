@@ -5,10 +5,18 @@
 }
 
 .main {
+    background-color: #12414F;
+    width: 100vw;
+    height: 101vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainBox {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin-bottom: 150px;
+    padding-bottom: 200px;
 }
 
 .mainLogo {
