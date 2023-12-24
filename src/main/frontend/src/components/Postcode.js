@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { useDaumPostcodePopup } from 'react-daum-postcode';
 import styles from "../Location.module.css";
 
-const Postcode = () => {
+const Postcode = (props) => {
     const open = useDaumPostcodePopup();
 
     const [address, setAddress] = useState("");
@@ -22,6 +22,7 @@ const Postcode = () => {
         }
 
         setAddress(fullAddress);
+        props.updateAddress(fullAddress);
     };
 
     const handleClick = () => {

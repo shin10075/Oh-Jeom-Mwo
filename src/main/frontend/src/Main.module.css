@@ -14,6 +14,7 @@
 }
 
 .mainBox {
+    height: fit-content;
     display: flex;
     flex-direction: column;
     padding-bottom: 200px;
@@ -33,6 +34,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 40px;
 }
 
 .searchInput {
@@ -49,4 +51,21 @@
     position: absolute;
     left : 5%;
     cursor: pointer;
+}
+.chooseBtnBox {
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.chooseBtn {
+    border : none;
+    width: 240px;
+    height: 80px;
+    color : white;
+    font-size: 36px;
+    font-weight: bold;
+    border-radius: 50px;
+    background: linear-gradient(96deg, #F33 0%, #FF7676 61.63%, #FFF500 100%);
+    cursor : pointer;
 }

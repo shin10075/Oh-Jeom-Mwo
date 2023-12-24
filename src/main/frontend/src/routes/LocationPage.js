@@ -1,12 +1,13 @@
 import styles from "../Location.module.css";
 import Postcode from "../components/Postcode";
-import {useNavigate} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 import {useState} from "react";
 
 function LocationPage() {
     const navigete = useNavigate();
 
     const [isMouseOn, setIsMouseOn] = useState(false);
+    const [address, setAddress] = useState("");
 
     const handlerMouseOver = () => {
         setIsMouseOn(true);
@@ -18,6 +19,20 @@ function LocationPage() {
 
     const onPrevious = () => {
         navigete(-1);
+    }
+
+    const updateAddress = () => {
+        setAddress(address);
+    }
+
+    const navigate = useNavigate();
+
+    const handlerClick = () => {
+        navigate("/", {
+            state : {
+                address : address
+            }
+        });
     }
 
     return (
@@ -32,9 +47,10 @@ function LocationPage() {
                                   fill="#9EE8FE"/>
                         </svg>
                     </div>
-                    <Postcode />
+                    <Postcode updateAddress={setAddress}/>
                     <div className={isMouseOn? styles.inputBtnHover : styles.inputBtn}
-                         onMouseOver={handlerMouseOver} onMouseOut={handlerMouseOut}>입력</div>
+                         onMouseOver={handlerMouseOver} onMouseOut={handlerMouseOut}
+                        onClick={handlerClick}>입력</div>
                 </div>
                 <div className={styles.sectionBar}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="1408" height="9" viewBox="0 0 1408 9"
